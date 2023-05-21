@@ -79,14 +79,12 @@ class GameData {
     };
     this.enemyData['last'] = {
         name:  'Dark King',
-
-
-        rate:  20, // 戦闘発生確率
-        image: 0,
-        hp:    50,
-        at:    10,
-        df:    5,
-        skill: 'Sword'
+        rate:  3, // 戦闘発生確率
+        image: 3,
+        hp:    999,
+        at:    499,
+        df:    99,
+        skill: 'Death'
     };
 
   }
