@@ -55,6 +55,15 @@ class GameAnim {
     time.old = time.now;      // 時間 旧を更新
 
     // 更新実行関数を実行する
-    
+    if (typeof this.funcUpdate === 'function'){
+      this.funcUpdate(this.time); 
+    }
+  };
+
+  //-------------------------------------------------
+  // 更新実行関数を設定
+  static add(func) { 
+    this.funcUpdate = func;
   }
+  
 }
