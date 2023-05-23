@@ -37,7 +37,6 @@ class GameData {
     // 宝物配列
     this.trasureArr = {
       // 呪文！
-      'Spell:Heal','Spell:Heal','Spell:Heal',
       'Spell:Fire','Spell:Fire','Spell:Fire',
       'Spell:Ice','Spell:Ice','Spell:Ice',
       // 鉄鎧
