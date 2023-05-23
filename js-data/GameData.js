@@ -35,15 +35,16 @@ class GameData {
 
     //---------------------------------------------------
     // 宝物配列
-    this.trasureArr = {
+    this.trasureArr = [
       // 呪文！
+      'Spell:Heal', 'Spell:Heal', 'Spell:Heal',
       'Spell:Fire','Spell:Fire','Spell:Fire',
       'Spell:Ice','Spell:Ice','Spell:Ice',
       // 鉄鎧
       'IronBody', 'IronArm', 'IronLeg', 'IronHead',
       // 強い装備
       'HeroSword', 'WisdomRing', 'FairyShield'
-   };
+    ];
 
     //---------------------------------------------------
     // 敵データ
