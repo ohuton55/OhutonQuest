@@ -2,6 +2,7 @@
 
 //読み込み後に開始する
 document.addEventListener('DOMContentLoaded', function() {
+  alert("addEventListner");
   // 変数
   const gameData = new GameData();        // ゲームデータ
   const userData = new UserData();        // ユーザーデータ
@@ -34,5 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ゲーム開始
     GameAnim.Start();     // アニメーション開始
-  })
-})
+    alert("GameStart");
+  });
+});
