@@ -5,7 +5,7 @@ class GameData {
   constructor() {
     // 描画用せってい
     this.w = 320; // 描画領域　横幅
-    hhis.h = 240; // 描画領域　高さ
+    this.h = 240; // 描画領域　高さ
     this.bg = '#000'; // 背景色（白）
 
     this.layerMax = 3;  // レイヤー最大数
@@ -37,7 +37,8 @@ class GameData {
     // 宝物配列
     this.trasureArr = [
       // 呪文！
-      'Spell:Heal', 'Spell:Heal', 'Spell:Heal',
+      'Spell:Heal', 'Spell:Heal', 'Spell:Heal'
+
       'Spell:Fire','Spell:Fire','Spell:Fire',
       'Spell:Ice','Spell:Ice','Spell:Ice',
       // 鉄鎧
