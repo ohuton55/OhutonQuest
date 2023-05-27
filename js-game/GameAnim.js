@@ -4,6 +4,11 @@ class GameAnim {
   // アニメーション実行用関数　ブラウザ依存を吸収する
   static requetAnim(cb){
     return (
+      window.requestAnimationFrame        ||
+      window.mozRequestAnimationFrame     ||
+      window.webkitRequestAnimationFrame  ||
+      window.oRequestAnimationFrame       ||
+      window.msRequestAnimationFrame      ||
       (cb => window.setTimeout(cb, 1000 / 60))
     )(cb);
   };
