@@ -73,6 +73,40 @@ class GameSound {
 
     // 再生
     au.removeEventListener('ended', au.func); // 終了時の処理を削除
+    au.play();    // 再生
+  };
+
+  // ループ再生
+  static loop(id) {
+    if (this.checkUnable(id)) { return }  // 無効確認
+    const au = this.sounds[id].audio;     // オーディオ取り出し
+    this.resetCurrentTime(au, 'pause');   // 再生位置を0に
+
+    // ループ再生
+    au.removeEventListener('ended', au.func); // 終了時の処理を削除
+    au.func = () => au.play();                // ループ用の再生
+    au.addEventListener('ended', au.func);    // 終了時の処理を削除
+    au.play();    // 再生
+  };
+
+  //------------------------------------------------------------
+  // BGM再生
+  static playBGM(id) {
+    if (this.checkUnable(id)) { return }  // 無効確認
+    const au = this.sounds[id].audio;     // オーディオ取り出し
+
+    // 切り替え処理
+    if (id != this.bgmNow) {
+      this.stop(this.bgmNow);   // 名前が異なるなら停止
+    } else 
+    if (! au.ended) {
+      return;       // 名前が同じで、再生中なら関数を終
+      
+    }
+  };
+
+  // BGM停止
+  static stopBGM() {
+    this.stop(this.bgmNow);
   }
 }
-
