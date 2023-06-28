@@ -79,8 +79,19 @@ class UiBattleEffect {
 			for(let i = 0; i < step; i++) {
 				//アニメが進行すると、描画する半径の種類が増える
 				if(i >= rate * step) { continue }
-			}
+			
+        const radius = (centerX + centerY / 2) * i / step;
+
+        //描画
+        context.beginPath();
+        //円弧描画
+        context.arc(centerX, centerY, radius, 0, Math.PI * 2, false);
+        context.stroke(); //パスとじる
+      }
 		}
-		
+    //終了
+		context.restore();
+    const isEnd = timeDiff >= timeLen; //終了判定
+    return isEnd;
 	}
 }
