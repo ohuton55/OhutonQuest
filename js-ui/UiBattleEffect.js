@@ -51,7 +51,34 @@ class UiBattleEffect {
 				context.lineTo(centerX + lineW, centerY - lineW); //中央みぎ
 			} else {
 				//後半　（右上から左下へ
-				
+				context.moveTo(rect.w - margin, margin); //右上
+				context.lineTo(centerX - lineW, centerY - lineW);	//中央左上
+				context.lineTo(margin,	rect.h - margin); //左下
+				context.lineTo(centerX + lineW, centerY + lineW);	//中央みぎした
+			}
+			context.fill();
+		} else if(options.actionType === 'Heal') {
+			//回復　（光の柱
+
+			const step = 15;
+			context.globalAlpha = 0.9;
+
+			//描画
+			for(let i = 0; i < step; i++) {
+				const w rate * (rext.w / step) * 1; //横幅
+				const x = i * rect.w / step - w / 2;	//X位置
+				context.fillRect(x, 0, w, rect.h);	//短形描画
+			}			
+		} else {
+			//火、　氷、　死（輪を描画
+			
+			const step = 25;
+			context.lineWidth = 4;
+			
+			//描画
+			for(let i = 0; i < step; i++) {
+				//アニメが進行すると、描画する半径の種類が増える
+				if(i >= rate * step) { continue }
 			}
 		}
 		
